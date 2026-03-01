@@ -978,8 +978,61 @@
                 display: flex;
             }
 
+            .container {
+                padding: 0 1.1rem;
+            }
+
+            section {
+                padding: 64px 0;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 100svh;
+                align-items: flex-start;
+                padding-top: 110px;
+                padding-bottom: 56px;
+            }
+
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: clamp(2.15rem, 7.5vw, 3rem);
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+                margin-bottom: 1.9rem;
+            }
+
+            .typewriter {
+                min-width: 0;
+                white-space: normal;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .cta-group .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.9rem 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.65rem;
+                margin-bottom: 2.2rem;
+            }
+
+            .impact-grid,
+            .testimonial-grid,
+            .skills-grid,
+            .project-grid,
+            .project-grid.compact,
+            .education-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
             }
 
             .timeline-header {
@@ -1322,8 +1375,8 @@
                         <h3>Dice Roller (High Score)</h3>
                         <p>2-player dice + tiles game with scoring and restart flow.</p>
                         <div class="project-links">
-                            <a class="live-link" href="https://twicedice.netlify.app/" target="_blank"
-                                rel="noopener noreferrer" aria-label="Open Dice Roller live demo">
+                            <a class="live-link" href="./dice.html" target="_blank" rel="noopener noreferrer"
+                                aria-label="Open Dice Duel (local) demo">
                                 <i data-lucide="external-link"></i> Live Demo
                             </a>
                         </div>

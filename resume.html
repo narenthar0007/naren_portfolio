@@ -31,11 +31,28 @@
         body {
             margin: 0;
             font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-            background: radial-gradient(1200px 800px at 10% 0%, rgba(124, 92, 255, 0.28), transparent 60%),
-                radial-gradient(900px 700px at 90% 10%, rgba(35, 213, 171, 0.18), transparent 60%),
+            background:
+                radial-gradient(1100px 700px at 12% 0%, rgba(124, 92, 255, 0.22), transparent 60%),
+                radial-gradient(900px 650px at 88% 8%, rgba(35, 213, 171, 0.14), transparent 62%),
+                radial-gradient(700px 520px at 55% 110%, rgba(236, 72, 153, 0.10), transparent 60%),
                 var(--bg);
+            background-attachment: fixed;
             color: var(--text);
             line-height: 1.55;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.46)),
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: auto, 26px 26px;
+            opacity: 0.9;
+            z-index: 0;
         }
 
         a {
@@ -50,7 +67,12 @@
         .container {
             max-width: 980px;
             margin: 0 auto;
-            padding: 32px 18px 64px;
+            padding: 18px 18px 28px;
+            height: calc(100vh - 52px);
+            height: calc(100svh - 52px);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
         }
 
         .topbar {
@@ -125,6 +147,9 @@
             border-radius: 18px;
             box-shadow: var(--shadow);
             padding: 22px;
+            height: 100%;
+            overflow: auto;
+            overscroll-behavior: contain;
         }
 
         .hero {
@@ -266,6 +291,7 @@
             body {
                 background: #fff;
                 color: #111;
+                overflow: visible;
             }
 
             .topbar {
@@ -277,6 +303,7 @@
                 box-shadow: none;
                 background: transparent;
                 padding: 0;
+                overflow: visible;
             }
 
             a {
@@ -288,6 +315,23 @@
             .kv {
                 border-color: #ddd;
                 background: transparent;
+            }
+        }
+
+        @media (max-width: 740px) {
+            body {
+                overflow: auto;
+            }
+
+            .container {
+                height: auto;
+                overflow: visible;
+                padding: 14px 14px 22px;
+            }
+
+            .card {
+                height: auto;
+                overflow: visible;
             }
         }
     </style>
