@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Narenthar S — Resume</title>
+    <meta name="description"
+        content="Narenthar S — Full Stack / Backend Developer. Resume: experience, skills, projects, and contact." />
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --card: rgba(255, 255, 255, 0.06);
+            --text: rgba(255, 255, 255, 0.92);
+            --muted: rgba(255, 255, 255, 0.7);
+            --line: rgba(255, 255, 255, 0.14);
+            --accent: #7c5cff;
+            --accent2: #23d5ab;
+            --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+            background: radial-gradient(1200px 800px at 10% 0%, rgba(124, 92, 255, 0.28), transparent 60%),
+                radial-gradient(900px 700px at 90% 10%, rgba(35, 213, 171, 0.18), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 18px 64px;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(12px);
+            background: rgba(11, 15, 23, 0.7);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand strong {
+            font-size: 14px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            padding: 9px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn.primary {
+            border-color: rgba(124, 92, 255, 0.5);
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.26), rgba(35, 213, 171, 0.12));
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .card {
+            margin-top: 18px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        @media (max-width: 820px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: 34px;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .meta {
+            display: grid;
+            gap: 8px;
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px dashed rgba(255, 255, 255, 0.18);
+            background: rgba(0, 0, 0, 0.16);
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .section {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+
+        .section h2 {
+            margin: 0 0 10px;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        ul {
+            margin: 10px 0 0 18px;
+            padding: 0;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 740px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .kv {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.14);
+        }
+
+        .kv strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .kv span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .role {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .role h3 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .role .when {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .company {
+            margin-top: 4px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        .note {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+
+            .topbar {
+                display: none;
+            }
+
+            .card {
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #111;
+            }
+
+            .meta,
+            .kv {
+                border-color: #ddd;
+                background: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar" role="banner">
+        <div class="topbar-inner">
+            <div class="brand">
+                <strong>Resume</strong>
+                <span>Narenthar S</span>
+            </div>
+            <div class="actions" role="navigation" aria-label="Resume actions">
+                <a class="btn" href="index.html">Back to Portfolio</a>
+                <a class="btn primary" href="naren_resume.docx" download="Narenthar_S_Resume.docx">Download DOCX</a>
+                <button class="btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="card" aria-label="Resume">
+            <div class="hero">
+                <div>
+                    <h1>Narenthar S</h1>
+                    <p class="title">Full Stack / Backend Developer</p>
+                    <p class="note">
+                        Full Stack / Backend Developer with experience in building scalable API-driven systems and
+                        integrating third-party platforms into high-traffic commerce ecosystems. Currently working at
+                        Paytm E-Commerce on ONDC integrations, upstream provider systems, and production-grade API
+                        enhancements.
+                    </p>
+                </div>
+                <div class="meta" aria-label="Contact">
+                    <div class="meta-row">
+                        <span class="pill">Phone: +91 9123512626</span>
+                        <span class="pill">Phone: +91 9486019768</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="pill">Email: <a href="mailto:narenthar0007@gmail.com">narenthar0007@gmail.com</a></span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="pill">LinkedIn: <a target="_blank" rel="noopener noreferrer"
+                                href="https://www.linkedin.com/in/narenthar-s-8136a721b/">View</a></span>
+                        <span class="pill">GitHub: <a target="_blank" rel="noopener noreferrer"
+                                href="https://github.com/narenthar0007">View</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section" aria-label="Technical skills">
+                <h2>Technical Skills</h2>
+                <div class="grid-2">
+                    <div class="kv"><strong>Languages</strong><span>Ruby, Python, JavaScript</span></div>
+                    <div class="kv"><strong>Frameworks</strong><span>Ruby on Rails, Django</span></div>
+                    <div class="kv"><strong>Databases</strong><span>PostgreSQL, MySQL, SQLite</span></div>
+                    <div class="kv"><strong>API & Integration</strong><span>REST APIs, Webhooks, OAuth, Token Authentication</span></div>
+                    <div class="kv"><strong>Background Processing</strong><span>Sidekiq</span></div>
+                    <div class="kv"><strong>Libraries</strong><span>Faraday, ActiveRecord</span></div>
+                    <div class="kv"><strong>Tools</strong><span>Git, Docker, Bitbucket, Postman</span></div>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Work experience">
+                <h2>Work Experience</h2>
+
+                <div class="kv" style="margin-top: 10px;">
+                    <div class="role">
+                        <h3>Associate Software Engineer</h3>
+                        <div class="when">Feb 2024 – Present</div>
+                    </div>
+                    <div class="company">Paytm E-Commerce Pvt. Ltd — Bangalore</div>
+                    <ul>
+                        <li>Enhanced upstream API systems to enable seamless seller onboarding on the ONDC network via PAI
+                            platform.</li>
+                        <li>Integrated multiple sellers including Petpooja, A2B, Sapaad, Bitsila, and Urban Piper into
+                            production workflows.</li>
+                        <li>Improved API validation mechanisms, reducing catalog rejection rates.</li>
+                        <li>Debugged and optimized backend services to improve stability and response handling.</li>
+                        <li>Collaborated with cross-functional teams to ensure compliance with ONDC protocol standards.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="kv" style="margin-top: 12px;">
+                    <div class="role">
+                        <h3>Software Engineer L1</h3>
+                        <div class="when">Oct 2023 – Jan 2024</div>
+                    </div>
+                    <div class="company">Innobits Solutions Pvt. Ltd — Bangalore</div>
+                    <ul>
+                        <li>Designed and automated third-party API integrations for upstream providers.</li>
+                        <li>Re-architected provider validation logic to improve security and reduce integration failures.
+                        </li>
+                        <li>Implemented background job processing using Sidekiq for asynchronous API calls.</li>
+                        <li>Delivered production-ready integrations within tight deadlines.</li>
+                    </ul>
+                </div>
+
+                <div class="kv" style="margin-top: 12px;">
+                    <div class="role">
+                        <h3>Ruby on Rails Intern</h3>
+                        <div class="when">Jul 2023 – Oct 2023</div>
+                    </div>
+                    <ul>
+                        <li>Assisted in development of multi-provider API integrations (Petpooja, Amazon, Shopify, Urban
+                            Piper).</li>
+                        <li>Debugged and resolved API sync issues in staging and production environments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Projects">
+                <h2>Projects</h2>
+
+                <div class="kv" style="margin-top: 10px;">
+                    <div class="role">
+                        <h3>ROAM – Travel Together</h3>
+                        <div class="when">Django / DRF / Channels</div>
+                    </div>
+                    <ul>
+                        <li>Built a social trip-planning platform to create/discover/join trips, collaborate on
+                            itineraries, split expenses, and chat in real time.</li>
+                        <li>Implemented JWT auth and a custom user model with shareable public_id (UUID) to avoid exposing
+                            sequential IDs.</li>
+                        <li>Delivered real-time trip chat using Django Channels + WebSockets with membership-based access
+                            control.</li>
+                        <li>Implemented expense split + settlement tracking and published Swagger/OpenAPI docs; added
+                            pytest + CI checks.</li>
+                    </ul>
+                </div>
+
+                <div class="kv" style="margin-top: 12px;">
+                    <div class="role">
+                        <h3>RIYE – Construction Management System</h3>
+                        <div class="when">Ruby on Rails 8 • SQLite</div>
+                    </div>
+                    <ul>
+                        <li>Built a multi-company construction management platform covering Companies, Projects, Workers,
+                            Teams/Team Heads, Attendance, Stock, Bank Details, Daily Updates, Replies.</li>
+                        <li>Implemented role-based access control (Employee/Manager/Admin/Owner) with permission checks
+                            and admin workflows.</li>
+                        <li>Added company context switching and company-scoped APIs (including `X-Company-Id` scoping).
+                        </li>
+                        <li>Delivered QR-based attendance punching (Punch In/Out with timestamps and location).</li>
+                        <li>Created Expo-mobile-ready Rails JSON APIs with Bearer token authentication (create/revoke,
+                            expiry).</li>
+                    </ul>
+                </div>
+
+                <div class="kv" style="margin-top: 12px;">
+                    <div class="role">
+                        <h3>Other work</h3>
+                        <div class="when">Web apps & mini-projects</div>
+                    </div>
+                    <ul>
+                        <li>Blog post web application with scheduling and reminders.</li>
+                        <li>Gaming website, touring website, analog clock, calculator, snake game (HTML/CSS/JavaScript).
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" aria-label="Soft skills">
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li>Teamwork and Collaboration</li>
+                    <li>Problem-Solving</li>
+                    <li>Critical Thinking</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
